@@ -1,0 +1,72 @@
+﻿@model ECommerceMVC.Models.ViewModels.RegisterVM
+@{
+    ViewData["Title"] = "Đăng ký";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-body p-5">
+                    <h2 class="text-center mb-4">Đăng ký tài khoản</h2>
+                    <form asp-action="DangKy" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label asp-for="MaKh" class="form-label">Mã khách hàng</label><sup>*</sup>
+                            <input asp-for="MaKh" class="form-control" placeholder="Nhập mã khách hàng">
+                            <span asp-validation-for="MaKh" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="MatKhau" class="form-label">Mật khẩu</label><sup>*</sup>
+                            <input asp-for="MatKhau" type="password" class="form-control" placeholder="Nhập mật khẩu">
+                            <span asp-validation-for="MatKhau" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="HoTen" class="form-label">Họ và tên</label><sup>*</sup>
+                            <input asp-for="HoTen" class="form-control" placeholder="Nhập họ tên đầy đủ">
+                            <span asp-validation-for="HoTen" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Giới tính</label><br>
+                            <div class="form-check form-check-inline">
+                                <input asp-for="GioiTinh" class="form-check-input" type="radio" value="true" id="Nam">
+                                <label class="form-check-label" for="Nam">Nam</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input asp-for="GioiTinh" class="form-check-input" type="radio" value="false" id="Nu">
+                                <label class="form-check-label" for="Nu">Nữ</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="NgaySinh" class="form-label">Ngày sinh</label><sup>*</sup>
+                            <input asp-for="NgaySinh" type="date" class="form-control">
+                            <span asp-validation-for="NgaySinh" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="DiaChi" class="form-label">Địa chỉ</label><sup>*</sup>
+                            <input asp-for="DiaChi" class="form-control" placeholder="Nhập địa chỉ">
+                            <span asp-validation-for="DiaChi" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="DienThoai" class="form-label">Điện thoại</label><sup>*</sup>
+                            <input asp-for="DienThoai" class="form-control" placeholder="Nhập số điện thoại">
+                            <span asp-validation-for="DienThoai" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">Email</label><sup>*</sup>
+                            <input asp-for="Email" type="email" class="form-control" placeholder="Nhập email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-item mb-3">
+                            <label class="form-label my-3" for="Hinh">Hình<sup>*</sup></label>
+                            <input type="file" name="Hinh" class="form-control">
+                            <span asp-validation-for="Hinh" class="text-danger"></span>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Đăng ký</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
